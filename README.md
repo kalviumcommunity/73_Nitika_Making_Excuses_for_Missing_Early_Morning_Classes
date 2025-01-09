@@ -1,3 +1,4 @@
+
 # Making Excuses for Missing the Early Morning Classes
 
 This project is a MERN stack application that allows students to post excuses for missing their early morning classes. The excuses can be copied by other students who may need them in the future.
