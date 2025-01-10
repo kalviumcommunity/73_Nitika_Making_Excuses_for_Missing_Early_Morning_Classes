@@ -29,5 +29,3 @@ Database design and interaction through CRUD operations with MongoDB.
 Building dynamic user interfaces with React.
 
 Implementing user authentication and managing session storage.
-
-Testing and debugging using Postman.
