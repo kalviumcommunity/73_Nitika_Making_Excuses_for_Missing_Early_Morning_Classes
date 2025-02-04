@@ -18,4 +18,5 @@ This project is a MERN stack application that allows students to post excuses fo
 1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/yourusername/making-excuses.git
-
+### deployment link 
+https://seven3-nitika-making-excuses-for-missing-oqc8.onrender.com/ping
