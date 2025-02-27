@@ -14,7 +14,11 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 // Test Route
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  const dbStatus = mongoose.connection.readyState === 1 ? "Connected" : "Not Connected";
+  res.json({
+    message: "API is running....",
+    databsesStatus: dbStatus
+  });
 });
 app.get("/users", async (req, res) => {
   try {
