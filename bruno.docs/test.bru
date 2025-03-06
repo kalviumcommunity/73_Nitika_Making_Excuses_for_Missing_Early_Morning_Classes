@@ -6,6 +6,17 @@ meta {
 
 post {
   url: http://localhost:3000/excuses
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+      "excuseText": "I missed the morning class because my alarm didn’t ring.",
+      "category": "Sleep",
+      "likes": 10,
+      "authorId": "65d89c8e4f3a2b001d2e5678", 
+      "createdAt": "2025-02-20T08:00:00Z"
+  }
+  
 }
