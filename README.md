@@ -20,3 +20,5 @@ This project is a MERN stack application that allows students to post excuses fo
    git clone https://github.com/yourusername/making-excuses.git
 ### deployment link 
 https://seven3-nitika-making-excuses-for-missing-oqc8.onrender.com/ping
+## netlify- frontend deployment link
+https://makingexcuses.netlify.app/
