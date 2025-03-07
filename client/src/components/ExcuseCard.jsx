@@ -12,19 +12,4 @@ const ExcuseCard = ({ excuse }) => {
     );
   };
   
-  // Dummy Data Example
-  const dummyExcuse = {
-    excuseText: "I missed class because my alarm didn’t ring.",
-    category: "Morning Excuses",
-    likes: 12,
-    authorId: "123456789"
-  };
-  
-  export default function App() {
-    return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
-        <ExcuseCard excuse={dummyExcuse} />
-      </div>
-    );
-  }
-  
+  export default ExcuseCard;
