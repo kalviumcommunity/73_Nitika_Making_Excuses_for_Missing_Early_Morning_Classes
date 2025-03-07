@@ -1,4 +1,4 @@
-import ExcuseCard from "./components/ExcuseCard" 
+import ExcuseCard from "./components/ExcuseCard"; 
 
 
 const dummyExcuse = {
@@ -18,7 +18,7 @@ export default function App() {
         A fun and relatable way to share and find the best excuses for skipping those early morning classes!
       </p>
 
-      {/* Render Excuse Card */}
+      
       <ExcuseCard excuse={dummyExcuse} />
     </div>
   );
