@@ -22,19 +22,27 @@ const ExcuseCard = ({ excuse }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 border border-gray-200 max-w-sm">
-      <h2 className="text-xl font-semibold text-gray-800">{excuse.excuseText}</h2>
-      <p className="text-gray-600">Category: <span className="font-medium">{excuse.category}</span></p>
-      <p className="text-gray-600">Likes: <span className="font-medium">{likes}</span></p>
-      <p className="text-gray-600">Author ID: <span className="font-medium">{excuse.authorId}</span></p>
+    <div className="bg-gradient-to-r from-purple-200 via-pink-100 to-yellow-100  shadow-xl rounded-2xl p-6 border border-gray-100 max-w-sm transition-transform hover:scale-105 duration-300 ease-in-out">
+      <h2 className="text-2xl font-bold text-gray-800 mb-2">{excuse.excuseText}</h2>
+      <p className="text-sm text-gray-500 mb-1">
+        <span className="font-semibold text-gray-700">Category:</span> {excuse.category}
+      </p>
+      <p className="text-sm text-gray-500 mb-1">
+        <span className="font-semibold text-gray-700">Likes:</span> {likes}
+      </p>
+      <p className="text-sm text-gray-500 mb-4">
+        <span className="font-semibold text-gray-700">Author ID:</span> {excuse.authorId}
+      </p>
+  
       <button
-        className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+        className="w-full py-2 px-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-600 transition-all duration-300"
         onClick={handleLike}
       >
-        Like
+        👍 Like
       </button>
     </div>
   );
+  
 };
 
 export default ExcuseCard;
