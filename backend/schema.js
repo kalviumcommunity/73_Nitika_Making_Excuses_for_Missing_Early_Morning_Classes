@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-
-// User Schema
 const userSchema = new mongoose.Schema({
     name: { 
         type: String, 
@@ -8,7 +6,7 @@ const userSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,  // ✅ Fixed spelling
+        required: true,  
         unique: true
     },
     password: {
@@ -20,30 +18,18 @@ const userSchema = new mongoose.Schema({
         enum: ["student", "teacher"], 
         default: () => "student"
     },
-    createdAt: { type: Date, default: Date.now } // ✅ Fixed casing
+    createdAt: { type: Date, default: Date.now } 
 });
 
 // Excuse Schema
 const excuseSchema = new mongoose.Schema({
-    excuseText: {
-        type: String,
-        required: true
-    },
-    category: {
-        type: String,
-        required: true
-    },
-    likes: { 
-        type: Number, 
-        default: 0
-    },
-    authorId: {
-        type: mongoose.Schema.Types.ObjectId, // ✅ Fixed "Type" → "Types"
-        ref: "User", // ✅ Fixed reference name
-        required: true // ✅ Fixed spelling
-    },
-    createdAt: { type: Date, default: Date.now } // ✅ Fixed casing
-});
+    excuseText: { type: String, required: true },
+    category: { type: String, required: true },
+    likes: { type: Number, default: 0 },
+    authorId: { type: String, required: true }  
+  });
+  
+  
 
 // Create Models
 const User = mongoose.model("User", userSchema);
