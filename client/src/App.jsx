@@ -13,7 +13,7 @@ export default function App() {
       setExcuses(response.data);
     } catch (err) {
       console.error("Error fetching data with Axios:", err);
-      setError("⚠️ Failed to fetch data. Please try again.");
+      setError("Failed to fetch data");
     }
   };
 
@@ -21,33 +21,22 @@ export default function App() {
     fetchData();
   }, []);
 
-  const handleExcuseAdded = () => {
-    fetchData(); // re-fetch to get updated excuse with Mongo _id
+  const handleExcuseAdded = (newExcuse) => {
+    setExcuses((prev) => [newExcuse, ...prev]); // add to top
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 py-10 px-4">
-      <div className="max-w-4xl mx-auto">
-        <header className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            🚫 Morning Class Excuses
-          </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            A fun and relatable way to share and find the best excuses for skipping those early morning classes!
-          </p>
-        </header>
-
-        <AddExcuse onExcuseAdded={handleExcuseAdded} />
-
-        {error && (
-          <p className="text-red-500 font-medium text-center mt-4">{error}</p>
-        )}
-
-        <section className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {excuses.map((excuse) => (
-            <ExcuseCard key={excuse._id || excuse.id} excuse={excuse} />
-          ))}
-        </section>
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 p-6">
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        🚫 Morning Class Excuses
+      </h1>
+      <p className="text-lg text-gray-700 mb-8">Manage your excuses smartly 😄</p>
+      <AddExcuse onExcuseAdded={handleExcuseAdded} />
+      {error && <p className="text-red-500">{error}</p>}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+        {excuses.map((excuse) => (
+          <ExcuseCard key={excuse._id} excuse={excuse} onDelete={fetchData} />
+        ))}
       </div>
     </div>
   );

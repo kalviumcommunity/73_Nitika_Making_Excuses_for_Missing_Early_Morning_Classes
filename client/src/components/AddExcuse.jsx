@@ -41,7 +41,7 @@ export default function AddExcuse({ onExcuseAdded }) {
         className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md border border-gray-200"
       >
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Add New Excuse
+          Create New Excuse
         </h2>
 
         <div className="mb-4">
